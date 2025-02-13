@@ -13,7 +13,7 @@ import random
 def acquire_item(inventory, item):
     """ Adds an item to the inventory """
     inventory.append(item)
-    print(f"You found a {item} in the room.")
+    print("You acquired a", item)
     return inventory
 
 def display_inventory(inventory):
@@ -94,6 +94,7 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
         room_description, item, challenge_type, challenge_outcome = room
         print(room_description)
         if item:
+            print(f"You found a {item} in the room.")
             inventory = acquire_item(inventory, item)
         if challenge_type == "puzzle":
             print("You encounter a puzzle!")
