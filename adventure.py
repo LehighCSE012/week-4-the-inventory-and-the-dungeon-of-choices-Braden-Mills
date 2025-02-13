@@ -13,7 +13,7 @@ import random
 def acquire_item(inventory, item):
     """ Adds an item to the inventory """
     inventory.append(item)
-    print("You acquired a", item)
+    print(f"You acquired a {item}!")
     return inventory
 
 def display_inventory(inventory):
