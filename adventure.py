@@ -89,6 +89,7 @@ def check_for_treasure(has_treasure):
         print("The monster did not have the treasure. You continue your journey.")
 
 def enter_dungeon(player_health, inventory, dungeon_rooms):
+    """ Determines the dungeon rooms, items, and involves user input """
     for room in dungeon_rooms:
         room_description, item, challenge_type, challenge_outcome = room
         print(room_description)
