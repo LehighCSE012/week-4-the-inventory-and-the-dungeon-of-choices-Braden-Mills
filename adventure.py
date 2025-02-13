@@ -84,7 +84,7 @@ def combat_encounter(player_health, monster_health, has_treasure):
 def check_for_treasure(has_treasure):
     """ Checks whether the monster has treasure after being defeated """
     if has_treasure:
-        print("You found the hidden treasure! You win!")
+        print("You found the hidden treasure!")
     else:
         print("The monster did not have the treasure. You continue your journey.")
 
@@ -132,10 +132,13 @@ def main():
     inventory = [] # Empty list to store values in the future
 
     dungeon_rooms = [
-        ("A dusty old library", "key", "puzzle", ("You solved the puzzle!", "The puzzle remains unsolved.", -5)),
-        ("A narrow passage with a creaky floor", None, "trap", ("You skillfully avoid the trap!", "You triggered a trap!", -10)),
+        ("A dusty old library", "key", "puzzle",
+        ("You solved the puzzle!", "The puzzle remains unsolved.", -5)),
+        ("A narrow passage with a creaky floor", None, "trap",
+        ("You skillfully avoid the trap!", "You triggered a trap!", -10)),
         ("A grand hall with a shimmering pool", "healing potion", "none", None),
-        ("A small room with a locked chest", "treasure", "puzzle", ("You cracked the code!", "The chest remains stubbornly locked.", -5))
+        ("A small room with a locked chest", "treasure", "puzzle",
+        ("You cracked the code!", "The chest remains stubbornly locked.", -5))
     ]
 
     has_treasure = random.choice([True, False]) # Randomly assign treasure
@@ -147,6 +150,7 @@ def main():
     check_for_treasure(treasure_obtained_in_combat) # Or has_treasure, depending on logic
 
     if player_health > 0:
+        print("\nYou stumble into a dungeon.")
         player_health, inventory = enter_dungeon(player_health, inventory, dungeon_rooms)
 
 if __name__ == "__main__":
