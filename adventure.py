@@ -101,11 +101,9 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
             choice = input("Do you want to solve or skip the puzzle? ").lower()
             if choice == "solve":
                 success = random.choice([True, False])
-                if success:
-                    print(challenge_outcome[0])
-                else:
-                    print(challenge_outcome[1])
-                    player_health += challenge_outcome[2]
+                print(challenge_outcome[0] if success else challenge_outcome[1])
+                player_health += challenge_outcome[2]
+
         elif challenge_type == "trap":
             print("You see a potential trap!")
             choice = input("Do you want to disarm or bypass the trap? ").lower()
