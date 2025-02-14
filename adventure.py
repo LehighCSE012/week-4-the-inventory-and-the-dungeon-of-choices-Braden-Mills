@@ -12,7 +12,7 @@ import random
 
 def acquire_item(inventory, item):
     """ Adds an item to the inventory """
-    inventory.append(item)
+    inventory.append(item) # First time using a list/tuple operation (append)
     print(f"You acquired a {item}!")
     return inventory
 
@@ -23,7 +23,7 @@ def display_inventory(inventory):
         print("Your inventory is empty.")
     else:
         print("\nYour inventory:")
-        for item in inventory:
+        for item in inventory: # Second time using a list/tuple operation (in)
             print(f"{num}. {item}")
             num += 1
 
@@ -90,7 +90,7 @@ def check_for_treasure(has_treasure):
 
 def enter_dungeon(player_health, inventory, dungeon_rooms):
     """ Determines the dungeon rooms, items, and involves user input """
-    for room in dungeon_rooms:
+    for room in dungeon_rooms: # Third time using a list/tuple operation (in)
         room_description, item, challenge_type, challenge_outcome = room
         print(room_description)
         if item:
